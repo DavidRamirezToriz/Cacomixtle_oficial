@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CACOMIXTLE | High-End Guayaberas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar sticky-top">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/caco_log.png" class="brand-logo" alt="Cacomixtle Logo"> 
+                CACOMIXTLE
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+            <p class="hero-subtitle">Boutique Artesanal</p>
+            <h1>Puebla<br>& Los Cabos</h1>
+            <div class="talavera-divider" style="max-width: 200px; margin: 20px auto;"></div>
+            
+            <div class="mt-4 text-center">
+                <a href="nosotros.html" class="btn-premium d-inline-block shadow-sm">Nuestra Historia</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="contenedor-productos" class="product-grid"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="index.html" class="footer-logo">Cacomixtle</a>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cacomixtle_puebla?igsh=YmNxemw4ZGd0ejN5"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/522225968886"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="hero-subtitle" style="font-size: 0.7rem; color: #444;">Puebla • Los Cabos • México</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+        fetch('js/datos.json').then(res => res.json()).then(data => {
+            const cont = document.getElementById('contenedor-productos');
+            data.productos.forEach((p, i) => {
+                cont.innerHTML += `
+                    <a href="producto.html?id=${p.id}" class="product-card" data-aos="fade-up">
+                        <div class="img-container">
+                            <img src="${p.imagenPrincipal}" alt="${p.nombre}">
+                        </div>
+                        <div class="price-box">
+                            <h6 class="hero-subtitle" style="font-size: 0.8rem; margin-bottom: 10px;">${p.nombre}</h6>
+                            <span class="price-old">$${p.precioOriginal}</span>
+                            <span class="price-new">$${p.precioOferta} MXN</span>
+                        </div>
+                    </a>`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Outfit:wght@200;400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+:root {
+    --gold: #c5a059;
+    --black: #0a0a0a;
+    --near-black: #1a1a1a;
+    --white: #ffffff;
+    --talavera: #003366;
+    --font-fancy: 'Playfair Display', serif;
+    --font-main: 'Outfit', sans-serif;
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: var(--font-main); 
+    background-color: var(--white); 
+    color: var(--black); 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR GLOBAL --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.brand-logo {
+    width: 55px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); 
+    transition: var(--transition);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-fancy);
+    font-size: 2.2rem;
+    color: var(--black) !important;
+    text-decoration: none;
+}
+
+/* --- DISEÑO TALAVERA --- */
+.talavera-divider {
+    height: 10px;
+    width: 100%;
+    background-image: linear-gradient(90deg, 
+        var(--talavera) 25%, #fff 25%, #fff 50%, 
+        var(--talavera) 50%, var(--talavera) 75%, #fff 75%, #fff 100%);
+    background-size: 25px 25px;
+    margin: 30px 0;
+    opacity: 0.9;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #fff 0%, #f9f9f9 100%);
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-fancy);
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.9;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    letter-spacing: 10px;
+    font-weight: 300;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* --- PRODUCTOS --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.product-card {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: #f4f4f4;
+    border: 1px solid transparent;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover img { transform: scale(1.05); }
+
+.price-box {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.price-old { text-decoration: line-through; color: #aaa; margin-right: 12px; font-weight: 300; }
+.price-new { color: var(--gold); font-weight: 700; font-size: 1.3rem; }
+
+/* --- BOTONES --- */
+.btn-premium {
+    background: var(--black);
+    color: var(--white);
+    padding: 20px 45px;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-premium:hover {
+    background: var(--near-black);
+    letter-spacing: 6px;
+    transform: translateY(-3px);
+}
+
+/* --- FOOTER --- */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.footer-logo { font-family: var(--font-fancy); font-size: 2.5rem; margin-bottom: 25px; display: block; color: #fff; text-decoration: none; }
+
+/* --- AJUSTES CELULAR (AQUÍ ESTÁ LA MAGIA) --- */
+@media (max-width: 768px) {
+    .navbar { padding: 12px 0; }
+    .navbar-brand { font-size: 1.6rem; }
+    .brand-logo { width: 42px; }
+
+    .hero {
+        min-height: 45vh; /* Seccion Hero más compacta */
+        padding: 60px 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem; /* Tamaño perfecto para iPhone/Android */
+    }
+    .hero-subtitle {
+        letter-spacing: 4px;
+        font-size: 0.75rem;
+    }
+
+    /* Botón flotante y centrado */
+    .btn-premium {
+        padding: 14px 28px;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        border-radius: 4px; /* Un toque de redondeo sutil */
+    }
+
+    /* Grid de 2 columnas apretado pero elegante */
+    .product-grid {
+        grid-template-columns: 1fr 1fr; 
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .img-container { border: 1px solid #eee; } /* Para que resalten las fotos blancas */
+
+    .price-box { padding: 12px 0; }
+    .price-new { font-size: 1rem; }
+    .price-old { font-size: 0.75rem; margin-right: 4px; }
+
+    /* Ajuste de NOSOTROS en móvil */
+    .hero-content.h1-nosotros {
+        font-size: 3.2rem !important;
+    }
+    
+    section[style*="background: var(--black)"] {
+        padding: 40px 15px !important;
+    }
+    
+    .fa-2x { font-size: 1.5rem; } /* Iconos menos invasivos */
+    
+    .talavera-divider {
+        height: 6px;
+        background-size: 18px 18px;
+        margin: 15px auto;
+        width: 80%; /* No abarca todo en móvil para que se vea como detalle */
+    }
+}
+/* --- ICONOS DE REDES SOCIALES SIN COLOR AZUL FEO --- */
+.footer-socials a, 
+.social-links a, 
+.social-icon {
+    color: var(--white) !important; /* Forzamos el blanco */
+    text-decoration: none !important;
+    opacity: 0.6; /* Un toque sutil */
+    transition: var(--transition);
+}
+
+.footer-socials a:hover, 
+.social-links a:hover, 
+.social-icon:hover {
+    opacity: 1; /* Al pasar el mouse brillan al 100% */
+    color: var(--white) !important;
+    transform: translateY(-5px) scale(1.1); /* Efecto de elevación */
+}
+
+/* Si quieres que el de WhatsApp sea verde sutil SOLO al pasar el mouse */
+.fa-whatsapp:hover {
+    color: #25D366 !important; 
+}
+
+/* Si quieres que el de Instagram sea morado sutil SOLO al pasar el mouse */
+.fa-instagram:hover {
+    color: #E1306C !important;
+}
+
+/* Definimos la animación de la cabeza */
+@keyframes moverCabeza {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(7deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-7deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.brand-logo {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 1s ease;
+}
+
+/* LA CLAVE: infinite se activa solo cuando el cursor está encima */
+.navbar-brand:hover .brand-logo {
+    animation: moverCabeza 1.3s ease-in-out infinite;
+}
