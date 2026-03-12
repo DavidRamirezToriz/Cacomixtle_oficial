@@ -1,20 +1,68 @@
 {
   "productos": [
     {
-      "id": "angelopolis",
-      "nombre": "Modelo Angelópolis",
+      "id": "Azul-Marino",
+      "nombre": "Modelo Angelópolis (Azul Profundo)",
       "precioOriginal": 950,
-      "precioOferta": 750,
-      "descripcion": "Inspirada en la elegancia de Puebla. Lino premium blanco con bordados artesanales. La prenda perfecta para eventos de gala bajo el sol.",
-      "imagenPrincipal": "img/guaya_1.webp"
+      "precioOferta": 700,
+      "descripcion": "Elegancia poblana capturada en azul marino. Un corte impecable para el hombre que busca distinción en eventos de noche o atardeceres frente al mar.",
+      "imagenPrincipal": "img/guaya1.jpeg"
     },
     {
-      "id": "bcs",
-      "nombre": "Modelo Mar de Cortés",
+      "id": "Gris-Acero",
+      "nombre": "Modelo Cholula (Gris Ceniza)",
       "precioOriginal": 1100,
-      "precioOferta": 890,
-      "descripcion": "Azul profundo diseñado para el paraíso de Los Cabos. Frescura absoluta y corte slim-fit de lujo.",
-      "imagenPrincipal": "img/guaya_1.webp"
+      "precioOferta": 700,
+      "descripcion": "Inspirada en los tonos volcánicos de nuestra tierra. Una guayabera versátil y sobria que proyecta madurez y un estilo artesanal refinado.",
+      "imagenPrincipal": "img/guaya2.jpeg"
+    },
+    {
+      "id": "Blanco-Marfil",
+      "nombre": "Modelo Mar de Cortés (Blanco Nube)",
+      "precioOriginal": 1100,
+      "precioOferta": 700,
+      "descripcion": "La pureza del lino en su máxima expresión. Frescura absoluta diseñada para bodas en la playa o celebraciones exclusivas bajo el sol de Los Cabos.",
+      "imagenPrincipal": "img/guaya3.jpeg"
+    },
+    {
+      "id": "Blanco-Celeste",
+      "nombre": "Modelo El Arco (Detalle Azul)",
+      "precioOriginal": 1100,
+      "precioOferta": 700,
+      "descripcion": "Cuerpo blanco con detalles en azul cielo. Un diseño fresco que evoca la espuma del mar y el horizonte de Baja California Sur.",
+      "imagenPrincipal": "img/guaya4.jpeg"
+    },
+    {
+      "id": "Verde-Olivo",
+      "nombre": "Modelo Sierra Madre (Verde Bosque)",
+      "precioOriginal": 1100,
+      "precioOferta": 700,
+      "descripcion": "Un tono orgánico para conectar con la naturaleza. Ideal para cenas al aire libre o escapadas de fin de semana con un toque rústico de lujo.",
+      "imagenPrincipal": "img/guaya5.jpeg"
+    },
+    {
+      "id": "Terracota",
+      "nombre": "Modelo Barro Rojo (Atardecer)",
+      "precioOriginal": 1100,
+      "precioOferta": 700,
+      "descripcion": "Color vibrante inspirado en la artesanía de barro. Una pieza con mucha personalidad que resalta el bronceado y el espíritu aventurero.",
+      "imagenPrincipal": "img/guaya6.jpeg"
+    },
+    {
+      "id": "Negro-Obsidiana",
+      "nombre": "Modelo Noche de Cabos (Negro)",
+      "precioOriginal": 1100,
+      "precioOferta": 700,
+      "descripcion": "El negro absoluto para el hombre que no compromete su elegancia. Lino ultra-fresco que rompe las reglas y domina la noche tropical.",
+      "imagenPrincipal": "img/guaya7.jpeg"
+    },
+    {
+      "id": "Arena-Desierto",
+      "nombre": "Modelo San José (Arena)",
+      "precioOriginal": 1100,
+      "precioOferta": 700,
+      "descripcion": "Mimetízate con el paisaje desértico. Un tono neutro y sofisticado que es tendencia esta temporada en los resorts más exclusivos.",
+      "imagenPrincipal": "img/guaya8.jpeg"
     }
   ]
 }
